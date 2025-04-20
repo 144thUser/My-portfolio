@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Footprint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f1c40f;
+        }
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        section h2 {
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            color: #2c3e50;
+        }
+        #about {
+            background-color: #ffffff;
+        }
+        #projects {
+            background-color: #ecf0f1;
+        }
+        #contact {
+            background-color: #ffffff;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        .project-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .project-card h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .project-card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .project-card a {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .project-card a:hover {
+            background-color: #217dbb;
+        }
+        .contact-form {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #f1c40f;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .contact-form button {
+            background-color: #e67e22;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .contact-form button:hover {
+            background-color: #d35400;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+        }
+        #hero {
+            background-color: #8e44ad;
+            padding: 80px 0;
+            text-align: center;
+        }
+        #hero h2 {
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        #hero p {
+            color: #eee;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #2c3e50;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #f0b207;
+        }
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            section h2 {
+                font-size: 1.8em;
+            }
+            #hero h2 {
+                font-size: 2.5em;
+            }
+            #hero p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Digital Footprint</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <h2>Hello, I'm Aval Bhadarka</h2>
+        <p>A Fintech geek with a passion for blending finance and technologia.</p>
+        <a href="#projects" class="button">View My Work</a>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio! I'm a Finance Consultant based in Mumbai. I have a strong background in learning marketable skills quicker and adapting it to modern organisational hurdles in the easiest executable manner and I'm passionate about Fintech. My goal is to create innovative and user-friendly solutions that make a difference.</p>
+        <p>I believe in continuous learning and I'm always exploring new technologies and techniques to improve my craft. When I'm not working, you can find me at your nearest Triathlete community.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project 1: E-commerce Website</h3>
+                <p>Developed a full-stack e-commerce website with user authentication, product catalog, shopping cart, and checkout functionality.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 2: Mobile Task Manager</h3>
+                <p>Created a mobile application for managing tasks and improving productivity, with features like reminders, categories, and progress tracking.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 3: Data Visualization Dashboard</h3>
+                <p>Designed an interactive dashboard to visualize complex data sets, providing insights and enabling data-driven decision-making.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>I'd love to hear from you! Feel free to reach out for collaborations, job opportunities, or just to say hello.</p>
+        <form class="contact-form" id="contact-form">
+            <input type="text" placeholder="Your Name" id="name" required>
+            <input type="email" placeholder="Your Email" id="email" required>
+            <textarea placeholder="Your Message" id="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="message-sent" style="display: none; color: green; margin-top: 10px;">
+            Message sent successfully!
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 AvalBhadarka. All rights reserved.</p>
+    </footer>
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const messageSent = document.getElementById('message-sent');
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate sending data (replace with actual backend logic)
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+
+            // Simulate success
+            messageSent.style.display = 'block';
+            contactForm.reset();
+
+            // Hide the message after a few seconds
+            setTimeout(() => {
+                messageSent.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
